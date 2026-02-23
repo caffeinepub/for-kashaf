@@ -1,0 +1,153 @@
+{
+  "kind": "build_request",
+  "title": "Create interactive birthday experience for Kashaf",
+  "projectName": "Kashaf Birthday",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a password-protected entry page that accepts the code '23023006' and displays error message 'Wrong code 😭 Try again!' for incorrect attempts",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "if(password === \"23023006\")",
+          "Wrong code 😭 Try again!"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Password input field is displayed on initial load",
+        "Entering '23023006' unlocks and progresses to next page",
+        "Incorrect passwords show error message below input",
+        "Page heading reads '🔐 Enter Secret Code' with subtitle 'Only Kashaf can enter 👀💜'"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create a math puzzle page asking 'What is 2 + 3 + 0 + 2 + 3 + 0 + 0 + 6 ?' with answer validation for '16', showing success message 'Correctttt 💜 She is the BESTTTT!' and error message 'Nooo sillyyy 😂 Try again!'",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "What is 2 + 3 + 0 + 2 + 3 + 0 + 0 + 6 ?",
+          "if(ans == \"16\")",
+          "Correctttt 💜 She is the BESTTTT!",
+          "Nooo sillyyy 😂 Try again!"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Puzzle question is displayed with input field",
+        "Correct answer '16' shows success message and auto-advances after 1.5 seconds",
+        "Incorrect answers show error message without advancing",
+        "Page heading reads '🧩 Solve This Cute Puzzle'"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create an interactive gift page with a clickable animated gift emoji (🎁) that bounces continuously and reveals a humorous message when clicked: 'The gift is not chocolate 🍫, Not diamonds 💎, Not money 💸, It's a lifetime free subscription of MY DRAMA 🤭💜, And unlimited hugs (terms & conditions apply 😂)'",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "The gift is not chocolate 🍫",
+          "It's a lifetime free subscription of MY DRAMA 🤭💜",
+          "And unlimited hugs (terms & conditions apply 😂)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Gift emoji (🎁) is displayed large and animates with continuous bounce effect",
+        "Clicking the gift reveals the full humorous message",
+        "Page auto-advances to birthday page after 4 seconds of displaying message",
+        "Page heading reads '🎁 A Mysterious Gift For You' with subtitle 'Click the gift if you dare 😏💜'"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a birthday celebration page displaying '🎉 HAPPY BIRTHDAY KASHAF 🎉' with messages 'You are the best person in the world 💜', 'I love you soooo much 🥺', 'From Shamaaim 💕' and a button to proceed to the next page",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "HAPPY BIRTHDAY KASHAF",
+          "You are the best person in the world 💜",
+          "I love you soooo much 🥺",
+          "From Shamaaim 💕"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Birthday heading and all messages are displayed prominently",
+        "Button labeled 'Next Surprise' advances to final page",
+        "All text preserves exact wording and emojis"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create a final message page with heading '💌 A Special Message' displaying heartfelt messages: 'I really enjoyed your company 💜', 'I truly want to be your safe place 🤍', 'I want to be your very close friend forever ✨', 'You mean so much to me, more than you know 🥹', 'Stay magical, my purple queen 👑💜'",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "I really enjoyed your company 💜",
+          "I truly want to be your safe place 🤍",
+          "I want to be your very close friend forever ✨",
+          "You mean so much to me, more than you know 🥹",
+          "Stay magical, my purple queen 👑💜"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All five messages are displayed with exact wording and emojis",
+        "Messages are presented as the final page with no further navigation"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Apply a whimsical purple gradient design theme using Comic Sans MS font, purple gradient background (from #6a0dad to #b19cd9), white text, rounded buttons with light purple (#d8b4f8) background that darken on hover (#c084fc), and semi-transparent white boxes for content sections",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "font-family: 'Comic Sans MS', cursive",
+          "background: linear-gradient(135deg,#6a0dad,#b19cd9)",
+          "background:#d8b4f8",
+          "background:#c084fc"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Background uses purple gradient from #6a0dad to #b19cd9",
+        "All text is white and uses Comic Sans MS font",
+        "Buttons have rounded corners with #d8b4f8 background that changes to #c084fc on hover",
+        "Content boxes have semi-transparent white backgrounds (rgba(255,255,255,0.2))",
+        "All pages are centered and responsive"
+      ]
+    }
+  ],
+  "constraints": [
+    "Each page must be hidden until the previous step is completed",
+    "Password must be exactly '23023006'",
+    "Puzzle answer must be exactly '16'",
+    "Gift reveal must auto-advance after 4 seconds",
+    "Puzzle success must auto-advance after 1.5 seconds"
+  ],
+  "nonGoals": [
+    "Backend storage or persistence of progress",
+    "User authentication beyond the single password",
+    "Multiple user support",
+    "Email or notification features"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

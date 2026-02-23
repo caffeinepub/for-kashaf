@@ -1,0 +1,13 @@
+{
+  "frontend/src/App.tsx": "Main app component managing page flow state and rendering the five sequential pages (password, puzzle, gift, birthday, final message).",
+  "frontend/src/components/PasswordPage.tsx": "Password entry page component that validates the secret code '23023006' and displays error messages for incorrect attempts.",
+  "frontend/src/components/PuzzlePage.tsx": "Math puzzle page component that validates the answer '16' and auto-advances after showing success message.",
+  "frontend/src/components/GiftPage.tsx": "Interactive gift reveal page with bouncing emoji animation that displays humorous message on click and auto-advances after 4 seconds.",
+  "frontend/src/components/BirthdayPage.tsx": "Birthday celebration page displaying personalized messages from Shamaaim with a button to proceed to the final message.",
+  "frontend/src/components/FinalMessagePage.tsx": "Final message page displaying heartfelt messages with no further navigation.",
+  "frontend/src/index.css": "Global styles with Comic Sans MS font, purple gradient background, custom animations for fade-in and bouncing gift, and semi-transparent puzzle box styling.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Comic Sans MS font family, custom purple color tokens, and increased border radius for the whimsical design.",
+  "frontend/src/components/ui/button.tsx": "Customized button component with rounded corners, purple color scheme (#d8b4f8 background, #c084fc hover), and multiple size variants.",
+  "frontend/src/components/ui/input.tsx": "Customized input component with rounded corners, white background, purple text, and purple focus ring matching the app theme.",
+  "frontend/src/lib/utils.ts": "Utility function for merging Tailwind CSS classes using clsx and tailwind-merge."
+}

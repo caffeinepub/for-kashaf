@@ -1,0 +1,117 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Create interactive birthday experience for Kashaf",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create password-protected entry page with code '23023006'",
+      "acceptanceCriteria": [
+        "Password input field is displayed on initial load",
+        "Entering '23023006' unlocks and progresses to next page",
+        "Incorrect passwords show error message below input",
+        "Page heading reads '🔐 Enter Secret Code' with subtitle 'Only Kashaf can enter 👀💜'"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PasswordPage.tsx",
+          "operation": "create",
+          "description": "Create password entry page component with input field for code '23023006', error message display showing 'Wrong code 😭 Try again!' for incorrect attempts, heading '🔐 Enter Secret Code', and subtitle 'Only Kashaf can enter 👀💜'. Include state management for password input, validation logic, and callback to advance to next page on success."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create math puzzle page with answer validation for '16'",
+      "acceptanceCriteria": [
+        "Puzzle question is displayed with input field",
+        "Correct answer '16' shows success message and auto-advances after 1.5 seconds",
+        "Incorrect answers show error message without advancing",
+        "Page heading reads '🧩 Solve This Cute Puzzle'"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PuzzlePage.tsx",
+          "operation": "create",
+          "description": "Create math puzzle page component displaying question 'What is 2 + 3 + 0 + 2 + 3 + 0 + 0 + 6 ?' with input field. Validate answer against '16', show success message 'Correctttt 💜 She is the BESTTTT!' and auto-advance after 1.5 seconds, or show error message 'Nooo sillyyy 😂 Try again!' for incorrect answers. Include heading '🧩 Solve This Cute Puzzle'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create interactive gift page with clickable bouncing emoji revealing humorous message",
+      "acceptanceCriteria": [
+        "Gift emoji (🎁) is displayed large and animates with continuous bounce effect",
+        "Clicking the gift reveals the full humorous message",
+        "Page auto-advances to birthday page after 4 seconds of displaying message",
+        "Page heading reads '🎁 A Mysterious Gift For You' with subtitle 'Click the gift if you dare 😏💜'"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GiftPage.tsx",
+          "operation": "create",
+          "description": "Create gift page component with large animated gift emoji (🎁) that bounces continuously. On click, reveal message: 'The gift is not chocolate 🍫, Not diamonds 💎, Not money 💸, It's a lifetime free subscription of MY DRAMA 🤭💜, And unlimited hugs (terms & conditions apply 😂)'. Include heading '🎁 A Mysterious Gift For You' with subtitle 'Click the gift if you dare 😏💜'. Auto-advance to birthday page after 4 seconds of displaying the message."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create birthday celebration page with messages and next button",
+      "acceptanceCriteria": [
+        "Birthday heading and all messages are displayed prominently",
+        "Button labeled 'Next Surprise' advances to final page",
+        "All text preserves exact wording and emojis"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BirthdayPage.tsx",
+          "operation": "create",
+          "description": "Create birthday celebration page displaying heading '🎉 HAPPY BIRTHDAY KASHAF 🎉' with messages 'You are the best person in the world 💜', 'I love you soooo much 🥺', 'From Shamaaim 💕'. Include button labeled 'Next Surprise' that advances to the final message page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create final message page with heartfelt messages",
+      "acceptanceCriteria": [
+        "All five messages are displayed with exact wording and emojis",
+        "Messages are presented as the final page with no further navigation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FinalMessagePage.tsx",
+          "operation": "create",
+          "description": "Create final message page with heading '💌 A Special Message' displaying five messages: 'I really enjoyed your company 💜', 'I truly want to be your safe place 🤍', 'I want to be your very close friend forever ✨', 'You mean so much to me, more than you know 🥹', 'Stay magical, my purple queen 👑💜'. This is the final page with no further navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Apply whimsical purple gradient design theme with Comic Sans MS font",
+      "acceptanceCriteria": [
+        "Background uses purple gradient from #6a0dad to #b19cd9",
+        "All text is white and uses Comic Sans MS font",
+        "Buttons have rounded corners with #d8b4f8 background that changes to #c084fc on hover",
+        "Content boxes have semi-transparent white backgrounds (rgba(255,255,255,0.2))",
+        "All pages are centered and responsive"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global styles including Comic Sans MS font family, purple gradient background (linear-gradient from #6a0dad to #b19cd9), white text color, and ensure full viewport height coverage. Add utility classes for semi-transparent white content boxes (rgba(255,255,255,0.2))."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme to include custom purple colors (#d8b4f8 for button background, #c084fc for button hover), Comic Sans MS font family configuration, and utilities for rounded buttons and centered responsive layouts."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire all page components (PasswordPage, PuzzlePage, GiftPage, BirthdayPage, FinalMessagePage) into the main App component. Implement state management to track current page and ensure each page is hidden until the previous step is completed. Apply consistent layout structure with centered content and responsive design."
+        }
+      ]
+    }
+  ]
+}

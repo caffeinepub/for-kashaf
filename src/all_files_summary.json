@@ -1,0 +1,20 @@
+{
+  "backend/main.mo": "Empty Motoko actor serving as a placeholder backend with no implemented functionality.",
+  "feature_evidence.json": "Feature evidence report documenting five implemented features: password-protected entry, math puzzle, interactive gift reveal, birthday celebration, and final message pages with their associated files and test IDs.",
+  "frontend-file-summaries.txt": "JSON-formatted summaries of all frontend files describing the five-page flow, component functionality, styling, and utility functions.",
+  "frontend/index.css": "Base Tailwind CSS configuration with CSS custom properties for design tokens including colors, radius, and theme variables for light and dark modes.",
+  "frontend/index.html": "HTML entry point with title 'For Kashaf 💜' that loads the React app via main.tsx.",
+  "frontend/src/App.tsx": "Main app component managing sequential page navigation through five states: password, puzzle, gift, birthday, and final message.",
+  "frontend/src/components/BirthdayPage.tsx": "Birthday celebration page displaying personalized messages from Shamaaim with a button to advance to the final message.",
+  "frontend/src/components/FinalMessagePage.tsx": "Final message page displaying heartfelt friendship messages with no further navigation.",
+  "frontend/src/components/GiftPage.tsx": "Interactive gift page with bouncing emoji that reveals a humorous message on click and auto-advances after 4 seconds.",
+  "frontend/src/components/PasswordPage.tsx": "Password entry page validating secret code '23023006' with error handling for incorrect attempts.",
+  "frontend/src/components/PuzzlePage.tsx": "Math puzzle page validating answer '16' with success/error messages and auto-advance after correct answer.",
+  "frontend/src/hooks/useActor.ts": "React hook managing ICP actor creation with Internet Identity authentication and query invalidation on identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "React context provider and hook for Internet Identity authentication with login, logout, and identity state management.",
+  "frontend/src/index.css": "Global styles with Comic Sans font, purple gradient background, custom fade-in and bounce animations, and semi-transparent puzzle box styling.",
+  "frontend/src/lib/utils.ts": "Utility function combining clsx and tailwind-merge for conditional Tailwind CSS class merging.",
+  "frontend/src/main.tsx": "React app entry point setting up QueryClient, InternetIdentityProvider, and rendering the root App component.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration with custom purple theme colors, Comic Sans MS font, OKLCH color system, container queries, typography, and accordion animations.",
+  "project_state.json": "Project metadata defining a password-protected birthday web app with 6 features including puzzle pages, gift reveals, and celebration messages in a purple gradient theme."
+}
