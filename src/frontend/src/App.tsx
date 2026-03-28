@@ -1,32 +1,47 @@
-import { useState } from 'react';
-import PasswordPage from './components/PasswordPage';
-import PuzzlePage from './components/PuzzlePage';
-import GiftPage from './components/GiftPage';
-import BirthdayPage from './components/BirthdayPage';
-import FinalMessagePage from './components/FinalMessagePage';
+import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import { CartProvider } from "./context/CartContext";
+import CartPage from "./pages/CartPage";
+import HelpPage from "./pages/HelpPage";
+import HomePage from "./pages/HomePage";
+import ShopPage from "./pages/ShopPage";
 
-type PageType = 'password' | 'puzzle' | 'gift' | 'birthday' | 'final';
+type Page = "home" | "shop" | "cart" | "help";
 
-function App() {
-  const [currentPage, setCurrentPage] = useState<PageType>('password');
+function AppContent() {
+  const [page, setPage] = useState<Page>("home");
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12">
-      {currentPage === 'password' && (
-        <PasswordPage onSuccess={() => setCurrentPage('puzzle')} />
-      )}
-      {currentPage === 'puzzle' && (
-        <PuzzlePage onSuccess={() => setCurrentPage('gift')} />
-      )}
-      {currentPage === 'gift' && (
-        <GiftPage onComplete={() => setCurrentPage('birthday')} />
-      )}
-      {currentPage === 'birthday' && (
-        <BirthdayPage onNext={() => setCurrentPage('final')} />
-      )}
-      {currentPage === 'final' && <FinalMessagePage />}
+    <div className="min-h-screen flex flex-col bg-background">
+      <Header currentPage={page} onNavigate={setPage} />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={page}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="flex-1"
+        >
+          {page === "home" && <HomePage onShopClick={() => setPage("shop")} />}
+          {page === "shop" && <ShopPage />}
+          {page === "cart" && <CartPage />}
+          {page === "help" && <HelpPage />}
+        </motion.div>
+      </AnimatePresence>
+      <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <CartProvider>
+      <AppContent />
+    </CartProvider>
+  );
+}

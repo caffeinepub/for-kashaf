@@ -1,35 +1,37 @@
-import { useState } from 'react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 interface PuzzlePageProps {
   onSuccess: () => void;
 }
 
 export default function PuzzlePage({ onSuccess }: PuzzlePageProps) {
-  const [answer, setAnswer] = useState('');
-  const [message, setMessage] = useState('');
+  const [answer, setAnswer] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = () => {
-    if (answer === '16') {
-      setMessage('Correctttt 💜 She is the BESTTTT!');
+    if (answer === "16") {
+      setMessage("Correctttt 💜 She is the BESTTTT!");
       setTimeout(() => {
         onSuccess();
       }, 1500);
     } else {
-      setMessage('Nooo sillyyy 😂 Try again!');
+      setMessage("Nooo sillyyy 😂 Try again!");
     }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSubmit();
     }
   };
 
   return (
     <div className="text-center animate-fade-in">
-      <h1 className="text-4xl md:text-5xl font-bold mb-8">🧩 Solve This Cute Puzzle</h1>
+      <h1 className="text-4xl md:text-5xl font-bold mb-8">
+        🧩 Solve This Cute Puzzle
+      </h1>
       <div className="puzzle-box inline-block">
         <p className="text-xl mb-6">What is 2 + 3 + 0 + 2 + 3 + 0 + 0 + 6 ?</p>
         <Input

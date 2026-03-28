@@ -1,80 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Lato:wght@300;400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --radius: 1.25rem;
-        --background: 0.58 0.15 288;
-        --foreground: 1 0 0;
-        --card: 0.68 0.12 288;
-        --card-foreground: 1 0 0;
-        --popover: 0.68 0.12 288;
-        --popover-foreground: 1 0 0;
-        --primary: 0.82 0.08 288;
-        --primary-foreground: 0.2 0.15 288;
-        --secondary: 0.72 0.1 288;
-        --secondary-foreground: 1 0 0;
-        --muted: 0.68 0.08 288;
-        --muted-foreground: 0.95 0.02 288;
-        --accent: 0.72 0.1 288;
-        --accent-foreground: 1 0 0;
-        --destructive: 0.577 0.245 27.325;
-        --destructive-foreground: 0.985 0 0;
-        --border: 0.75 0.08 288;
-        --input: 0.3 0.15 288;
-        --ring: 0.82 0.08 288;
-    }
+  :root {
+    --radius: 0.375rem;
 
-    * {
-        @apply border-border;
-    }
-    
-    body {
-        margin: 0;
-        font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
-        background: linear-gradient(135deg, #6a0dad, #b19cd9);
-        color: white;
-        min-height: 100vh;
-        overflow-x: hidden;
-    }
-}
+    /* Elegant cream/white palette */
+    --background: 1 0 0;
+    --foreground: 0.18 0 0;
+    --card: 0.99 0.004 80;
+    --card-foreground: 0.18 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0 0;
 
-@layer components {
-    .puzzle-box {
-        background: rgba(255, 255, 255, 0.2);
-        padding: 2rem;
-        border-radius: 1.25rem;
-        backdrop-filter: blur(10px);
-    }
+    /* Primary = warm cream panels */
+    --primary: 0.945 0.025 80;
+    --primary-foreground: 0.18 0 0;
+
+    /* Secondary = blush */
+    --secondary: 0.88 0.04 20;
+    --secondary-foreground: 0.18 0 0;
+
+    --muted: 0.965 0.015 80;
+    --muted-foreground: 0.48 0.01 60;
+
+    /* Accent = golden tan */
+    --accent: 0.7 0.075 72;
+    --accent-foreground: 1 0 0;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.83 0.025 78;
+    --input: 0.83 0.025 78;
+    --ring: 0.7 0.075 72;
+
+    /* Custom tokens */
+    --cream: 0.945 0.025 80;
+    --gold: 0.7 0.075 72;
+    --blush: 0.78 0.045 20;
+    --charcoal: 0.18 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Lato", sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
 }
 
 @layer utilities {
-    .animate-fade-in {
-        animation: fadeIn 0.6s ease-in;
-    }
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+  .font-sans-lato {
+    font-family: "Lato", sans-serif;
+  }
 
-    .animate-bounce-gift {
-        animation: bounceGift 1s infinite alternate ease-in-out;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes bounceGift {
-        from {
-            transform: translateY(0px);
-        }
-        to {
-            transform: translateY(-15px);
-        }
-    }
+  .lace-border {
+    position: relative;
+  }
+  .lace-border::before,
+  .lace-border::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 120px;
+    opacity: 0.12;
+    background-image: radial-gradient(
+      circle,
+      oklch(0.83 0.025 78) 1px,
+      transparent 1px
+    );
+    background-size: 12px 12px;
+    pointer-events: none;
+  }
+  .lace-border::before {
+    left: 0;
+  }
+  .lace-border::after {
+    right: 0;
+  }
 }
